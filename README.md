@@ -43,6 +43,7 @@ let parameters = AuthHandlersCreator.ParametersKeys(userId: "username", password
 let handlersCreator = AuthHandlersCreator(userStore: usersProvider, parametersContainer: containerType, 
                                      parametersKeys: parameters)
 ```
+What next? For sure we want to get a userId from passed token. `TokenAuthMiddleware` extends `Kitura.RouterRequest` to add `jotunUser` parameter. This means that any router called after middlware could access fulfilled `jotunUser`. 
 
 # License
 
