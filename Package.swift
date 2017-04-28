@@ -2,7 +2,7 @@
 import PackageDescription
 
 let package = Package(
-    name: "JotunServerAuthorization",
+    name: "JotunServer-Authorization",
     targets: [
     ],
     dependencies: [
