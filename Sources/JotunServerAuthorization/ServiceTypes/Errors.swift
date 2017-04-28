@@ -21,5 +21,7 @@ public enum TokenAuthError: Error {
 public enum JotunUserPersistingError: Error {
     case invalidUserForToken
     case cantDuplicateUser
+    case stogareError
+    case extraUsersFound
     case generalError(Error)
 }
