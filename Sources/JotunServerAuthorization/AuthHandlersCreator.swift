@@ -21,6 +21,11 @@ public struct AuthHandlersCreator {
         public let userId: String
         public let password: String
         
+        public init(userId: String, password: String) {
+            self.userId = userId
+            self.password = password
+        }
+        
         // Allows to customize API parameters.
         public static func base() -> ParametersKeys {
             return ParametersKeys(userId: "jotun_userId", password: "jotun_userPassword")
