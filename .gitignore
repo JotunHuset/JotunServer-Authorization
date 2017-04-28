@@ -5,5 +5,5 @@ DerivedData
 project.xcworkspace/
 xcuserdata/
 Packages/
-JotunServerAuthorization.xcodeproj/
+*.xcodeproj/
 .build/
