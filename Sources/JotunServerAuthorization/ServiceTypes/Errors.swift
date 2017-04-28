@@ -1,8 +1,9 @@
 //
 //  Errors.swift
-//  JotunServer
+//  JotunServerAuthorization
 //
-//  Created by Sergey on 4/27/17.
+//  Created by Sergey Krasnozhon on 4/28/17.
+//  Copyright © 2017 Sergey Krasnozhon. All rights reserved.
 //
 //
 
