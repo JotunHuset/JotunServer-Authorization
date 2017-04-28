@@ -46,7 +46,7 @@ public struct JotunUsersStoreProvider {
                 oncomplete(nil)
             }
             .catch(on: self.queue) { (error) in
-                oncomplete((error as? TokenAuthError) ?? TokenAuthError.generalError)
+                oncomplete((error as? TokenAuthError) ?? TokenAuthError.generalError(error))
         }
     }
 
@@ -66,12 +66,15 @@ public struct JotunUsersStoreProvider {
             }
             .then(on: self.queue) { (token) in
                 self.persistor.create(token: token, oncomplete: { (error) in
-                    let resultError = (error == nil) ? nil : TokenAuthError.generalError
+                    var resultError: TokenAuthError? = nil
+                    if let error = error {
+                        resultError = TokenAuthError.generalError(error)
+                    }
                     oncomplete(token.value, resultError)
                 })
             }
             .catch(on: self.queue) { (error) in
-                let resultError = (error as? TokenAuthError) ?? TokenAuthError.generalError
+                let resultError = (error as? TokenAuthError) ?? TokenAuthError.generalError(error)
                 oncomplete(nil, resultError)
         }
     }
@@ -92,7 +95,7 @@ public struct JotunUsersStoreProvider {
                 oncomplete(resultUserId, nil)
             }
             .catch(on: self.queue) { (error) in
-                let resultError = (error as? TokenAuthError) ?? TokenAuthError.generalError
+                let resultError = (error as? TokenAuthError) ?? TokenAuthError.generalError(error)
                 oncomplete(nil, resultError)
         }
     }

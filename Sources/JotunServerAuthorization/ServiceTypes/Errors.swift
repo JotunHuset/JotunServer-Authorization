@@ -15,11 +15,11 @@ public enum TokenAuthError: Error {
     case cantGenerateCredentials
     case invalidToken
     case expiredToken
-    case generalError
+    case generalError(Error)
 }
 
 public enum JotunUserPersistingError: Error {
     case invalidUserForToken
-    case generalError
     case cantDuplicateUser
+    case generalError(Error)
 }
