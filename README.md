@@ -32,6 +32,8 @@ router.post(basePath + "/register/", handler: handlersCreator.registerHandler())
 ```
 With `containerType` you can customize where do you plan to put your parameters. 
 Under the hood this routs makes redirets to the `JotunUsersStoreProvider` instanse. And that guy decide what to do and then just store information into passed `JotunUserPersisting` implementation. In example above it is `JotunUserInMemoryPersistor`.
+You can check [CouchDB persistor](https://github.com/JotunHuset/JotunServer-Authorization-CouchDB). 
+
 Cool, right? But I'm sure you have a question: "Where should I pass the username and password?". By default it is 
 ```
 "jotun_userId" //key for username parameter
