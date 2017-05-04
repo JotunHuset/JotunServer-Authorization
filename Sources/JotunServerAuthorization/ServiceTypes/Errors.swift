@@ -22,6 +22,6 @@ public enum JotunUserPersistingError: Error {
     case invalidUserForToken
     case cantDuplicateUser
     case stogareError
-    case extraUsersFound
+    case extraRecordFound
     case generalError(Error)
 }
